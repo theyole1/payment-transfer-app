@@ -1,6 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { AccountsService } from '../../../services/accounts.service';
-import Account from '../../../shared/models/account.model';
 import {
   FormBuilder,
   FormGroup,
@@ -70,7 +69,9 @@ export class AddAccountForm implements OnInit {
       next: () => {
         this.message.set('Account successfully created!');
         this.form.reset({ accountType: 'internal' });
-        this.router.navigate(['/accounts']);
+        setTimeout(() => {
+          this.router.navigate(['/accounts']);
+        }, 1500);
       },
       error: () => this.error.set('Failed to create account.'),
     });
