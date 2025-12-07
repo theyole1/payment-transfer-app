@@ -1,0 +1,45 @@
+<div class="transfer-container">
+  @if (step() === 'form') {
+  <h2>Transfer Funds</h2>
+
+  <form (ngSubmit)="goToPreview()">
+    <label>From Account</label>
+    <select [(ngModel)]="sourceId" name="source">
+      <option value="">Select source account</option>
+      @for (acc of internalAccounts; track acc.id) {
+      <option [value]="acc.id">{{ acc.accountName }} ({{ acc.balance | number : '1.2-2' }})</option>
+      }
+    </select>
+
+    <label>To Account</label>
+    <select [(ngModel)]="destinationId" name="destination">
+      <option value="">Select destination account</option>
+      @for (acc of accounts(); track acc.id) {
+      <option [value]="acc.id">{{ acc.accountName }}</option>
+      }
+    </select>
+    
+    <label>Amount</label>
+    <input type="number" min="1" [(ngModel)]="amount" name="amount" placeholder="Enter amount" />
+
+    <div class="buttons">
+      <button class="btn secondary" (click)="goToDashboard()">Back</button>
+      <button type="submit" class="btn primary">Send Money</button>
+    </div>
+
+    @if (error()) {
+    <p class="error">{{ error() }}</p>
+    } @if (message()) {-
+    <p class="success">{{ message() }}</p>
+    }
+  </form>
+  } @if (step() === 'preview') {
+  <app-transfer-preview-component
+    [sourceAccount]="sourceAccount()!"
+    [destinationAccount]="destinationAccount()!"
+    [amount]="amount()!"
+    (edit)="step.set('form')"
+    (confirm)="submitTransfer()"
+  ></app-transfer-preview-component>
+  }
+</div>

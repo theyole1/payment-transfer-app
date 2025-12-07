@@ -1,0 +1,41 @@
+<div class="add-container">
+  <h2>Add New Account</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>
+      Account Name:
+      <input type="text" formControlName="accountName" placeholder="Portugal Vacation" />
+
+      @if (form.get('accountName')?.touched && form.get('accountName')?.invalid) {
+      <p class="error" *ngIf="form.get('accountName')?.errors?.['required']">Name is required.</p>
+      <p class="error" *ngIf="form.get('accountName')?.errors?.['numbersOnly']">
+        Name cannot be only numbers.
+      </p>
+      <p class="error" *ngIf="form.get('accountName')?.errors?.['nameTaken']">
+        Name already exists.
+      </p>
+      }
+    </label>
+
+    <label>
+      Account Number:
+      <input type="number" formControlName="accountNumber" placeholder="4598495849" />
+    </label>
+
+    <label>
+      Account Type:
+      <select formControlName="accountType">
+        <option value="internal">Internal</option>
+        <option value="external">External</option>
+      </select>
+    </label>
+
+    @if (error()) {
+    <p class="error">{{ error() }}</p>
+    } @if (message()) {
+    <p class="success">{{ message() }}</p>
+    }
+
+    <button type="submit" class="add-btn">Create Account</button>
+  </form>
+</div>

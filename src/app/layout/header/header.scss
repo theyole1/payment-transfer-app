@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--color-accent);
+  color: #222;
+  box-shadow: var(--shadow-md);
+
+  .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    color: #222;
+    margin-left: 24px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

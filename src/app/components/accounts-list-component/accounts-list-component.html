@@ -1,0 +1,7 @@
+<div class="accounts-container">
+  <div class="accounts-wrapper">
+    @for (acc of accountsList(); track acc.id) {
+    <app-account-card-component [account]="acc"></app-account-card-component>
+    }
+  </div>
+</div>

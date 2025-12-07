@@ -1,0 +1,29 @@
+<div class="transactions-container">
+  <h2>@if (!fullListPreview()) { Recent Transactions } @else { All Transactions }</h2>
+
+  @for (transaction of sortedTransactions(); track transaction.id) {
+  <div class="transaction" [ngClass]="{ 'external-transaction': transaction.isExternal }">
+    <div class="left">
+      <div class="names">
+        <span class="source">{{ transaction.sourceName }}</span>
+        <span class="arrow">→</span>
+        <span class="dest">{{ transaction.destinationName }}</span>
+      </div>
+      <div class="date">
+        {{ transaction.date | date : 'medium' }}
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="amount">${{ transaction.amount | number : '1.2-2' }}</div>
+    </div>
+  </div>
+  } @empty {
+  <div class="empty-list">
+    <p class="empty">No transactions yet.</p>
+    <button routerLink="/transfer">create a first transfer</button>
+  </div>
+  } @if (!fullListPreview() && sortedTransactions().length) {
+  <a class="view-all-btn" routerLink="/history">View All →</a>
+  }
+</div>

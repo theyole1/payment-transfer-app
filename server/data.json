@@ -1,0 +1,41 @@
+{
+  "accounts": [
+    {
+      "id": "1",
+      "accountName": "Primary Account",
+      "accountNumber": 4678,
+      "accountType": "primary",
+      "balance": 4500
+    },
+    {
+      "id": "2",
+      "accountName": "Savings Account",
+      "accountNumber": 12378,
+      "accountType": "internal",
+      "balance": 9500
+    },
+    {
+      "id": "3",
+      "accountName": "Business Checking",
+      "accountNumber": 5678,
+      "accountType": "internal",
+      "balance": 5500
+    },
+    {
+      "id": "4",
+      "accountName": "Emergency Fund",
+      "accountNumber": 9901,
+      "accountType": "internal",
+      "balance": 8000
+    }
+  ],
+  "transactions": [
+    {
+      "id": "eac1462c-6bcd-442b-be9e-76b7e4826276",
+      "sourceId": "1",
+      "destinationId": "2",
+      "amount": 500,
+      "date": "2025-12-07T18:28:02.397Z"
+    }
+  ]
+}

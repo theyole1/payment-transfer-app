@@ -1,0 +1,101 @@
+.account-card {
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: 0.2s ease;
+
+  &:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .delete-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      opacity: 0.6;
+    }
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+  }
+
+  .type {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  .balance {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+}
+
+.internal-card {
+  border: 2px solid #4caf50;
+  background: #eafaf0;
+
+  .name {
+    font-weight: 700;
+    color: #2e7d32;
+  }
+
+  .balance {
+    color: #2e7d32;
+    font-weight: 600;
+  }
+}
+
+.external-card {
+  border: 2px solid #1473e6;
+  background: #e8f2ff;
+  display: flex;
+  justify-content: center;
+
+  .balance {
+    color: #6a0080;
+    font-weight: 500;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .account-card {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+
+    .top {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .name {
+      font-size: 1rem;
+    }
+
+    .type {
+      font-size: 0.75rem;
+    }
+
+    .balance {
+      font-size: 1.2rem;
+    }
+  }
+}

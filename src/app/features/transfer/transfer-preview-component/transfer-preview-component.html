@@ -1,0 +1,25 @@
+<div class="transfer-preview-card">
+  <h2>Review Transfer</h2>
+
+  <div class="section">
+    <label>From Account:</label>
+    <div class="value">{{ sourceAccount().accountName }} ({{ sourceAccount().accountNumber }})</div>
+  </div>
+
+  <div class="section">
+    <label>To Account:</label>
+    <div class="value">{{ destinationAccount().accountName }} ({{ destinationAccount().accountNumber }})</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <label>Amount:</label>
+    <div class="value">${{ amount() | number : '1.2-2' }}</div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn secondary" (click)="edit.emit()">Back</button>
+    <button class="btn primary" (click)="confirm.emit()">Confirm Transfer</button>
+  </div>
+</div>

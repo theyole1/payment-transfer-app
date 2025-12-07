@@ -1,0 +1,26 @@
+<div
+  class="account-card"
+  [ngClass]="{
+    'internal-card': account.accountType === 'internal',
+    'external-card': account.accountType === 'external',
+  }"
+>
+  <div class="top">
+    <div class="name">{{ account.accountName }}</div>
+    @if (account.accountType === 'primary') {
+    <i class="fa-solid fa-wallet"></i>
+    }
+    
+    @if (account.accountType !== 'primary') {
+    <button class="delete-btn" (click)="onDelete(account.id)">
+      <i class="fa-regular fa-trash-can"></i>
+    </button>
+    }
+  </div>
+
+  <div class="type">{{ account.accountNumber }}</div>
+
+  @if (account.accountType !== 'external') {
+  <div class="balance">${{ account.balance | number : '1.2-2' }}</div>
+  }
+</div>

@@ -1,0 +1,78 @@
+.transfer-preview-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #230078;
+    text-align: center;
+  }
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+
+    label {
+      font-weight: 600;
+      color: #666;
+    }
+
+    .value {
+      font-weight: 600;
+      color: #111;
+    }
+
+    &.total .value {
+      color: #230078;
+      font-size: 1.2rem;
+    }
+  }
+
+.divider {
+    height: 1px;
+    background: #e5e5e5;
+    margin: 16px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      width: 48%;
+      text-align: center;
+      border: none;
+      transition: 0.2s;
+
+      &.primary {
+        background: var(--color-primary);
+        color: #fff;
+
+        &:hover {
+          background: #180054;
+        }
+      }
+
+      &.secondary {
+        background: #f2f2f2;
+
+        &:hover {
+          background: #e4e4e4;
+        }
+      }
+    }
+  }
+}

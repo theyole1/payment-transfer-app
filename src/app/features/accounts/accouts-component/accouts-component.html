@@ -1,0 +1,14 @@
+<app-banner-component></app-banner-component>
+
+<div class="accounts-page">
+  <div class="accounts-header">
+    <h2>All Accounts</h2>
+
+    <div class="account-card add-card" (click)="onAddAccount()">
+      <div class="icon">+</div>
+      <span>Add Account</span>
+    </div>
+  </div>
+
+  <app-accounts-list-component [fullAccListPreview]="true"></app-accounts-list-component>
+</div>

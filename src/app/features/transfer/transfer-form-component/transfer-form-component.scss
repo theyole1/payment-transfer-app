@@ -1,0 +1,83 @@
+.transfer-container {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 820px;
+  margin: 20px auto;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: -6px;
+    }
+
+    select,
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+
+      .btn {
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.95rem;
+        width: 48%;
+        text-align: center;
+        border: none;
+        transition: 0.2s;
+
+        &.primary {
+          background: var(--color-primary);
+          color: #fff;
+
+          &:hover {
+            background: #180054;
+          }
+        }
+
+        &.secondary {
+          background: #f2f2f2;
+
+          &:hover {
+            background: #e4e4e4;
+          }
+        }
+      }
+    }
+
+    .error {
+      color: var(--color-error);
+      background: #ffe5e5;
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .success {
+      color: var(--color-success);
+      background: #e5ffe5;
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+  }
+}

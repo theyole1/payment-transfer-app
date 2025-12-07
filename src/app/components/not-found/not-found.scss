@@ -1,0 +1,48 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 32px;
+}
+
+.content {
+  text-align: center;
+  background: var(--color-bg);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 500px;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.message {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.home-button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+
+  &:hover {
+    background-color: #200060;
+  }
+}

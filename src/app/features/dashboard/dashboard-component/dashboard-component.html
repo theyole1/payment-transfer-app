@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <app-banner-component></app-banner-component>
+
+  <section class="section-block">
+    <h2 class="section-title">Your Accounts</h2>
+    <app-accounts-list-component [fullAccListPreview]="false"></app-accounts-list-component>
+  </section>
+
+  <section class="section-block">
+    <app-transactions-list-component [fullListPreview]="false" [limit]="3">
+    </app-transactions-list-component>
+  </section>
+</div>
